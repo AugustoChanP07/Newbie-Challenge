@@ -1,0 +1,5 @@
+Augusto,Boy
+Rodrigo,Boy
+Juana,Girl
+michelle,Girl
+max,No-Binary

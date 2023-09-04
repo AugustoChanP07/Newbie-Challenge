@@ -1,0 +1,50 @@
+import streamlit as st
+st.title("Name in a list")
+Name_List = []
+
+
+def Add_Name():
+    Name = st.text_input("Enter a name: ")
+    Name_List.append(Name)
+    st.write(Name_List)
+    return Name_List
+
+    # View all the names 
+def View_Names():
+    num = 0
+    for x in Name_List:
+        st.write(num, x)
+        num= num + 1
+
+    # Change Name
+def Change_Name():
+    num = 0
+    for x in Name_List:
+        print(num, x)
+        num= num + 1
+    Select_num = st.number_input("Enter the number of the name you want to change: ")     
+    Name = st.text_input("Enter new name: ")
+    Name_List[Select_num] = Name
+    return Name_List
+
+    # Delete Name
+def Delete_Name():
+    num = 0
+    for x in Name_List:
+        st.write(num, x)
+        num= num + 1
+    Delete = st.text_input("Enter the name want to delete: ")
+    Name_List.remove(Delete)
+    return Name_List
+
+
+Menu = st.selectbox("Enter what you want to do", ("Add a Name", "Delete a Name", "View all Names"))
+if Menu == "Add a Name":
+    Name_List = Add_Name()
+elif Menu == 2:
+    Name_List = Change_Name()
+elif Menu == 3:
+    Name_List = Delete_Name()    
+elif Menu == 4:
+    Name_List = View_Names()
+
